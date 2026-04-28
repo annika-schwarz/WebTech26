@@ -1,17 +1,32 @@
 * {
-    font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 header {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
+    display: flex;  /* definiert einen Flex-Container, aktiviert einen Flex-Kontext für alle seine direkten Kindelemente */
+    flex-direction: row; /* legt die Hauptrichtung der Flex-Elemente fest (row = Horizontal, Zeilenrichtung links nach rechts) */
+    flex-wrap: nowrap; /* legt fest, ob die Flex-Elemente in einer Zeile bleiben oder auf mehrere Zeilen umbrechen sollen (nowrap = alle Elemente in einer Zeile) */
+    justify-content: space-between; /* definiert die Ausrichtung der Flex-Elemente entlang der Hauptachse (space-between = gleichmäßiger Abstand zwischen den Elementen, erstes Element am Anfang, letztes Element am Ende) */
+    align-items: center;    /* definiert die Ausrichtung der Flex-Elemente entlang der Querachse (center = zentriert) */
+    
     background-color: #AFAFAF;
     padding: 10px 20px; 
 }
 
 header img {
-    height: 3em;
+    width: 3em;
+}
+
+h1 {
+    color: #0082D1;
+}
+
+.eingerueckt {
+    margin-left: 40px;
+}
+
+.li-border {
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px 0;
 }
