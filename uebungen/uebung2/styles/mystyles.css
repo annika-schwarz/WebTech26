@@ -1,6 +1,11 @@
 * {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+:root{
+    --htw-grau: #AFAFAF;
+    --htw-blau: #0082D1;
+    --htw-gruen: #68de19;
+}
 
 header {
     display: flex;  /* definiert einen Flex-Container, aktiviert einen Flex-Kontext für alle seine direkten Kindelemente */
@@ -9,24 +14,95 @@ header {
     justify-content: space-between; /* definiert die Ausrichtung der Flex-Elemente entlang der Hauptachse (space-between = gleichmäßiger Abstand zwischen den Elementen, erstes Element am Anfang, letztes Element am Ende) */
     align-items: center;    /* definiert die Ausrichtung der Flex-Elemente entlang der Querachse (center = zentriert) */
     
-    background-color: #AFAFAF;
-    padding: 10px 20px; 
-}
+    background-color: var(--htw-grau);
+    padding: 1%;
 
-header img {
+    img {
     width: 3em;
+    }
 }
 
 h1 {
-    color: #0082D1;
+    color: var(--htw-blau);
 }
 
 .eingerueckt {
-    margin-left: 40px;
+    margin-left: 4.5%;
 }
 
-.li-border {
-    border: 1px solid black;
-    padding: 10px;
-    margin: 10px 0;
+ul{
+    list-style: none;
+}
+
+ul>li {
+    border: 0.125em solid black;
+    padding: 1%;
+    margin: 1%;
+    border-radius: 1rem;
+    width: 30%;
+}
+
+li:hover {
+        background-color: var(--htw-blau);
+        color: white;
+        box-shadow: #68de19 0px 5px 15px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    margin: auto;
+}
+
+a:hover {
+    font-weight: bolder;
+    color:#68de19
+}
+
+#indexmain{
+    background-color: rgb(210, 241, 219);
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+main>aside {
+    background-color: rgb(174, 200, 181);
+    text-align: center;
+   /* padding: 5%; bezieht sich auf die Breite von aside, also 5% von der größe von aside */
+    display: grid;
+    grid-template-columns: 1 fr 1 fr;
+
+    img{
+        width: 50%;
+    }
+}
+
+table {
+    box-shadow: 0px 5px 15px #68de19;
+    border-collapse: collapse;
+    width: 60%;
+
+    thead tr{
+        background-color: var(--htw-gruen); /*jede Zeile in table head */
+        text-align: left;
+    }
+
+
+    tbody tr:nth-child(even){
+        background-color: var(--htw-grau); /*jede gerade Zeile in table body */
+    }
+
+    tbody tr:nth-child(odd){
+        background-color: rgb(236, 210, 241); /*jede ungerade Zeile in table body */
+    }
+
+    tbody tr:hover {
+        background-color: var(--htw-blau);
+        color: white;
+        box-shadow: #68de19 0px 5px 15px; 
+    }
+
+    td, th{
+        padding: 2%;
+       
+    }
 }
