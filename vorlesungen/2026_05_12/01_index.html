@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+
+</head>
+<body>
+    <h1>JavaScript</h1>
+    <main>
+        <h4>Eigenschaften</h4>
+        <ul>
+            <li>Skriptsprache (aus Performanzgründen aber compiliert - z.B. V8 in Chrome, SpiderMonkey in Firefox)</li>
+            <li>dynamische Typisierung</li>
+            <li>keine unterschiedlichen Referenztypen</li>
+            <li>Vererbung durch <code>prototype</code></li>
+            <li>Objekteigenschaften und -funktionen können einfach dem Objekt hinzugefügt werden</li>
+        </ul>
+        <h4>Nützliche Links</h4>
+        <ul>
+            <li><a href="https://www.ecma-international.org/publications-and-standards/standards/ecma-262/">ECMA-262</a></li>
+            <li><a href="https://dom.spec.whatwg.org/">Document Object Model (DOM)</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide">JavaScript Guide</a></li>
+            <li><a href="https://www.w3schools.com/js/default.asp">JavaScript Tutorial</a></li>
+            <li><a href="https://learnjavascript.online/">Learn JavaScript</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference">JavaScript Reference</a></li>
+        </ul>
+        <h4>Ergebnisliste</h4>
+        <ul id="ulresult">
+            <li id="liresult1"></li>
+        </ul>
+        <input type="text" id="input" oninput="inputFunc()" placeholder="Name"/>
+        <button type="button" onclick="helloFIW()">Klick Mich!</button>
+    </main>
+    <script>
+
+   // JavaScript
+
+        function inputFunc() {
+            //let inputElement = document.getElementById("input");
+            let inputElement = document.querySelector("#input"); // Query-Selektor: alle Elemente mit id=input, da id einzigartig sein sollte, wird aber nur eines zurückgegeben
+            console.log(inputElement.value); // Zugriff auf den Wert des Input-Felds
+            
+            let liElem = document.querySelector("#liresult1");
+            liElem.textContent = inputElement.value; // Textinhalt des Listenelements wird auf den Wert des Input-Felds gesetzt
+            liElem.style.color = "red"; // Textfarbe des Listenelements wird auf rot gesetzt
+        }
+
+        function helloFIW() {
+            console.log("Hello FIW!"); //Funktion ist Behandlun des Button-Klicks
+        }
+
+     
+        let x = 5; // Variable, kann später geändert werden
+        x = "FIW"; // Variable kann auch einen anderen Typ annehmen, da JavaScript dynamisch typisiert ist
+
+        const y = 6; // Konstante, kann nicht mehr geändert werden --> sollte man meist nutzen
+
+        var z = 7; // Veraltet, sollte nicht mehr verwendet werden
+        
+        function test1(a, b) {
+            return a + b; // keine Typisierung / Rückgabetyp, a und b können alles sein
+        }
+        console.log("test1 : " + test1(5, 6)); // 11
+
+        //let test2= test1;
+        const test2= test1;
+        console.log("test2 : " + test2(5, 6)); // 11, String wird mit Ergebnis verkettet, da einer der beiden Werte ein String ist
+        //console.log('test2 : ' + test2(5, 6)); String geht auch mit einfachen Anführungszeichen, aber
+        console.log('test2 : ', test2(5, 6)); // Verkettung geht auch mit Komma, dann wird test2(5,6) als zweites Argument an console.log übergeben und nicht vorher in einen String umgewandelt
+        console.log(`test2 : ${test2(5, 6)}`); //Backticks ermöglichen Template Literals, damit
+
+        let test3 = (a,b) => a + b; // Arrow Function, kürzere Schreibweise für Funktionen, automatisch return-Anwesitung
+        console.log("test3 : " + test3(5, 6)); // 11
+
+    </script>
+</body>
+</html>

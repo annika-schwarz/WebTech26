@@ -1,0 +1,62 @@
+
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin: 2%;
+    gap: 2vw; /* fügt einen Abstand von 2vw zwischen den Grid-Elementen hinzu */
+}
+
+.citycard{
+    /*background-color: rgb(216, 151, 206);*/
+    text-align: center; /* bezieht sich auf die Container in citycard */
+    display: grid;
+    grid-template-rows: 4fr 1fr; /* definiert zwei Zeilen, die 4 Teile und 1 Teil der Höhe einnehmen */
+    align-items: center; /* zentriert die Inhalte vertikal innerhalb der citycard */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.citycard:hover{
+    box-shadow: rgb(0, 0, 0) 0px 5px 15px;
+    font-weight: bold; /* macht den Text fett, wenn die Maus über der citycard schwebt */
+}
+
+
+.cityimage{
+    /*background-color: royalblue;
+    /*width: 30%; /* nimmt 30% der Breite des übergeordneten Elements (citycard) ein */
+
+    img{
+        width: 30%; /* Bild nimmt die volle Breite des cityimage-Containers ein */
+        margin: 2em auto; /* zentriert das Bild horizontal und fügt oben und unten 20px Abstand hinzu */
+    }
+}
+
+
+.cityname{
+    /*background-color: salmon;*/
+}
+
+header{
+    background-color: rgb(67, 146, 79);
+    text-align: center;
+    color: white;
+    padding: 1vw; /* fügt oben und unten 1em Abstand hinzu */
+}
+
+@media screen and (min-width: 600px) {
+    .wrapper{
+        grid-template-columns: repeat(2, 1fr); /* definiert zwei Spalten, die jeweils die Hälfte der Breite einnehmen */
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .wrapper{
+    grid-template-columns: repeat(3, 1fr); /* definiert drei Spalten, die jeweils ein Drittel der Breite einnehmen */    
+    } 
+}   
+
+@media screen and (min-width: 1200px) {
+    .wrapper{
+    grid-template-columns: repeat(4, 1fr); /* definiert vier Spalten, die jeweils ein Viertel der Breite einnehmen */    
+    }   
+}
