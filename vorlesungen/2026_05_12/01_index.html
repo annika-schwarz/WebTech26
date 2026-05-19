@@ -30,21 +30,29 @@
         <ul id="ulresult">
             <li id="liresult1"></li>
         </ul>
-        <input type="text" id="input" oninput="inputFunc()" placeholder="Name"/>
+        <input type="text" id="input"
+        oninput="inputFunc()"
+        onfocus="changecolor('yellow')"
+        onblur="changecolor('green')"
+        placeholder="Name"/>
         <button type="button" onclick="helloFIW()">Klick Mich!</button>
     </main>
     <script>
-
    // JavaScript
-
         function inputFunc() {
             //let inputElement = document.getElementById("input");
             let inputElement = document.querySelector("#input"); // Query-Selektor: alle Elemente mit id=input, da id einzigartig sein sollte, wird aber nur eines zurückgegeben
             console.log(inputElement.value); // Zugriff auf den Wert des Input-Felds
             
             let liElem = document.querySelector("#liresult1");
+            liElem.innerHTML = `Eingabe <ul><li> style="color:red;">${inputElement.value}</li></ul>`; // HTML-Inhalt des Listenelements wird auf die Eingabe gesetzt, mit roter Farbe
             liElem.textContent = inputElement.value; // Textinhalt des Listenelements wird auf den Wert des Input-Felds gesetzt
-            liElem.style.color = "red"; // Textfarbe des Listenelements wird auf rot gesetzt
+            //liElem.style.color = "red"; // Textfarbe des Listenelements wird auf rot gesetzt
+        }
+
+        function changecolor(color) { //wenn kein Parameter übergeben wird, kann man Standardwert eingeben
+            let inputElement = document.querySelector("#input");
+            inputElement.style.backgroundColor = color;
         }
 
         function helloFIW() {
