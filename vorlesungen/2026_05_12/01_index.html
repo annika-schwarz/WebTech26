@@ -82,6 +82,27 @@
         let test3 = (a,b) => a + b; // Arrow Function, kürzere Schreibweise für Funktionen, automatisch return-Anwesitung
         console.log("test3 : " + test3(5, 6)); // 11
 
+        function makeRequest (file) {
+            return new Promise((resolve, reject) => { // Promise-Objekt, das entweder erfüllt (resolve) oder abgelehnt (reject) wird
+                console.log('making request for ' + file);
+                if (file === 'index.html') {
+                    resolve('index.html was found'); // Promise wird erfüllt, wenn file index.html ist
+                } else {
+                    reject(file + ' does not exist'); // Promise wird abgelehnt, wenn file nicht index.html ist
+                }
+            });
+        }
+
+        function testPromise(file) {
+            makeRequest(file)
+                .then(response => {console.log('Response received: ' + response);
+                return processRequest(response); })
+                .catch(error => console.log('Error: ' + error));
+        }
+
+        
+
+
     </script>
 </body>
 </html>

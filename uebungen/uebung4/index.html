@@ -16,6 +16,8 @@
         <div class="form-floating mb-3">
             <input type="text" class="form-control" id="firstName" placeholder="Vorname">
             <label for="firstName">Vorname</label>
+            <div class="valid-feedback">Richtige Eingabe!</div>
+            <div class="invalid-feedback">Bitte Vorname eingeben!</div> 
         </div>
     </div>
 
@@ -23,6 +25,8 @@
         <div class="form-floating mb-3">
             <input type="text" class="form-control" id="lastName" placeholder="Nachname">
             <label for="lastName">Nachname</label>
+            <div class="valid-feedback">Richtige Eingabe!</div>
+            <div class="invalid-feedback">Bitte Nachname eingeben!</div> 
         </div>
     </div>    
 </div>
@@ -33,22 +37,92 @@
         <div class="form-floating mb-3">
             <input type="email" class="form-control" id="email" placeholder="E-mail">
             <label for="email">E-mail</label>
+            <div class="valid-feedback">Richtige Eingabe!</div>
+            <div class="invalid-feedback">Bitte E-mail eingeben!</div> 
         </div>
     </div>
     <div class="col-12 col-md-6 col-xl-4">
         <div class="form-floating mb-3">
             <input type="text" class="form-control" id="ipAddress" placeholder="IP-Adresse">
             <label for="ipAddress">IP-Adresse</label>
+            <div class="valid-feedback">Richtige Eingabe!</div>
+            <div class="invalid-feedback">Bitte IP-Adresse eingeben!</div> 
         </div>
     </div>    
 </div>
 
-<div class="row">
+<div class="row mb-5">
     <div class="d-grid gap-2 col-12 col-md-6 mx-auto">
-    <button class="btn btn-success fw-bold" style="background-color:#00868B;" type="button">Registrieren</button>
+    <button class="btn btn-success fw-bold" onclick="registerUser()" style="background-color:#00868B;" type="button">Registrieren</button>
     <button class="btn btn-secondary fw-light" type="button">Abbrechen</button>
     </div>
 </div>
+
+<h2>Eingegebene Werte</h2>
+
+<ul class="list-group" id="inputList"></ul>
+
+
+<script>
+
+    function registerUser() {
+     console.log("Registrieren-Button wurde geklickt!");
+/*
+    let inputFirstName = document.querySelector('#firstName');
+        //console.log('inputFirstName:', inputFirstName);
+        let inputFirstNameValue = inputFirstName.value;
+        //console.log('inputFirstNameValue:', inputFirstNameValue);
+
+    let resultList = document.querySelector('#inputList');
+    resultList.innerHTML = `<li class="list-group-item">Vorname: ${inputFirstNameValue}</li>`;
+    
+        if(inputFirstNameValue == "") {
+            inputFirstName.classList.add('is-invalid');
+            inputFirstName.classList.remove('is-valid');
+        }
+        else {
+            inputFirstName.classList.add('is-valid');
+            inputFirstName.classList.remove('is-invalid');
+        }
+
+    let inputLastName = document.querySelector('#lastName');
+        //console.log('inputLastName:', inputLastName);
+        let inputLastNameValue = inputLastName.value;
+        //console.log('inputLastNameValue:', inputLastNameValue);
+        resultList.innerHTML += `<li class="list-group-item">Nachname: ${inputLastNameValue}</li>`;
+
+        if(inputLastNameValue == "") {
+            inputLastName.classList.add('is-invalid');
+            inputLastName.classList.remove('is-valid');
+        }
+        else {
+            inputLastName.classList.add('is-valid');
+            inputLastName.classList.remove('is-invalid');
+        }
+        */
+
+        let allInputs = document.querySelectorAll('input');
+        console.log('allInputs:', allInputs);
+
+        resultList = "";
+        for(let i = 0; i < allInputs.length; i++) {
+            
+            if(allInputs[i].value == "") {
+                allInputs[i].classList.add('is-invalid');
+                allInputs[i].classList.remove('is-valid');
+            }
+            else {
+                allInputs[i].classList.add('is-valid');
+                allInputs[i].classList.remove('is-invalid');
+            }
+            resultList.innerHTML += `<li class="list-group-item">${allInputs[i].value}</li>`;
+        }
+
+    }
+
+    
+
+</script>
 
 
 </body>
